@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using OCPI.DTO.v2_1_1.Shared;
 
 namespace OCPI.DTO.v2_1_1.Version
 {
@@ -8,7 +9,7 @@ namespace OCPI.DTO.v2_1_1.Version
         /// Endpoint identifier.
         /// </summary>
         [Required]
-        public ModuleID identifier { get; set; }
+        public string identifier { get; set; }
 
         /// <summary>
         /// URL to the endpoint.

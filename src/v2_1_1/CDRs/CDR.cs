@@ -1,4 +1,5 @@
 ﻿using OCPI.DTO.v2_1_1.Locations;
+using OCPI.DTO.v2_1_1.Shared;
 using OCPI.DTO.v2_1_1.Tariffs;
 using System;
 using System.Collections.Generic;
@@ -92,7 +93,7 @@ namespace OCPI.DTO.v2_1_1.CDRs
         /// <summary>
         /// Total duration during this session that the EV is not being charged (no energy being transfered between EVSE and EV), in hours.
         /// </summary>
-        public decimal total_parking_time { get; set; }
+        public decimal? total_parking_time { get; set; }
 
         /// <summary>
         /// Optional remark, can be used to provide addition human readable information to the CDR, for example: reason why a transaction was stopped.

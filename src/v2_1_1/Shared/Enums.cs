@@ -1,25 +1,9 @@
-﻿namespace OCPI.DTO.v2_1_1
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+
+namespace OCPI.DTO.v2_1_1.Shared
 {
-    public enum ModuleID
-    {
-        CDRs,
-        Commands,
-        Credentials,
-        Locations,
-        Sessions,
-        Tariffs,
-        Tokens
-    }
-
-    public enum VersionNumber : int
-    {
-        /*
-        2.0", // OCPI version 2.0.
-        2.1, //  OCPI version 2.1. (DEPRECATED, do not use, use 2.1.1 instead)
-        2.1.1 //  OCPI version 2.1.1. (this version)
-        */
-    }
-
+    [JsonConverter(typeof(StringEnumConverter))]
     public enum ImageCategory
     {
         CHARGER, // Photo of the physical device that contains one or more EVSEs.
@@ -32,6 +16,7 @@
         OWNER, // logo of the charge points owner, for example a local store, to be displayed with the EVSEs detailed information view
     }
 
+    [JsonConverter(typeof(StringEnumConverter))]
     public enum LocationType
     {
         ON_STREET, // Parking in public space.
@@ -42,6 +27,7 @@
         UNKNOWN// Parking location type is not known by the operator (default).
     }
 
+    [JsonConverter(typeof(StringEnumConverter))]
     public enum ParkingRestriction
     {
         EV_ONLY, // Reserved parking spot for electric vehicles.
@@ -51,6 +37,7 @@
         MOTORCYCLES // Parking spot only suitable for (electric) motorcycles or scooters.
     }
 
+    [JsonConverter(typeof(StringEnumConverter))]
     public enum PowerType
     {
         AC_1_PHASE, // AC mono phase.
@@ -58,6 +45,7 @@
         DC, // Direct Current.
     }
 
+    [JsonConverter(typeof(StringEnumConverter))]
     public enum Status
     {
         AVAILABLE, // The EVSE/Connector is able to start a new charging session.
@@ -71,6 +59,7 @@
         UNKNOWN// No status information available. (Also used when offline)
     }
 
+    [JsonConverter(typeof(StringEnumConverter))]
     public enum Facility
     {
         HOTEL, // A hotel.
@@ -91,12 +80,14 @@
         WIFI // Wifi or other type of internet available.
     }
 
+    [JsonConverter(typeof(StringEnumConverter))]
     public enum EnvironmentalImpactCategory
     {
         NUCLEAR_WASTE, // Produced nuclear waste in gramms per kilowatthour.
         CARBON_DIOXIDE // Exhausted carbon dioxide in gramms per kilowarrhour.
     }
 
+    [JsonConverter(typeof(StringEnumConverter))]
     public enum EnergySourceCategory
     {
         NUCLEAR, // Nuclear power sources.
@@ -109,6 +100,7 @@
         WATER // Regenerative power from water turbines
     }
 
+    [JsonConverter(typeof(StringEnumConverter))]
     public enum ConnectorType
     {
         CHADEMO, // The connector type is CHAdeMO, DC
@@ -138,12 +130,14 @@
         TESLA_S // Tesla Connector “Model-S”-type (oval, 5 pin)
     }
 
+    [JsonConverter(typeof(StringEnumConverter))]
     public enum ConnectorFormat
     {
         SOCKET, // The connector is a socket; the EV user needs to bring a fitting plug.
         CABLE // The connector is an attached cable; the EV users car needs to have a fitting inlet.
     }
 
+    [JsonConverter(typeof(StringEnumConverter))]
     public enum Capability
     {
         CHARGING_PROFILE_CAPABLE, // The EVSE supports charging profiles. Sending Charging Profiles is not yet supported by OCPI.
@@ -154,12 +148,14 @@
         UNLOCK_CAPABLE, // Connectors have mechanical lock that can be requested by the eMSP to be unlocked.
     }
 
+    [JsonConverter(typeof(StringEnumConverter))]
     public enum AuthMethod
     {
         AUTH_REQUEST, // Authentication request from the eMSP
         WHITELIST, // Whitelist used to authenticate, no request done to the eMSP
     }
 
+    [JsonConverter(typeof(StringEnumConverter))]
     public enum CdrDimensionType
     {
         ENERGY, // defined in kWh, default step_size is 1 Wh
@@ -170,6 +166,7 @@
         TIME // time charging: defined in hours, default step_size is 1 second.
     }
 
+    [JsonConverter(typeof(StringEnumConverter))]
     public enum SessionStatus
     {
         ACTIVE, // The session is accepted and active.
@@ -178,6 +175,7 @@
         PENDING // The session is pending and has not yet started. This is the initial state.
     }
 
+    [JsonConverter(typeof(StringEnumConverter))]
     public enum TariffDimensionType
     {
         ENERGY, // defined in kWh, step_size multiplier: 1 Wh
@@ -186,6 +184,7 @@
         TIME // time charging: defined in hours, step_size multiplier: 1 second
     }
 
+    [JsonConverter(typeof(StringEnumConverter))]
     public enum DayOfWeek
     {
         MONDAY, // Monday
@@ -197,12 +196,14 @@
         SUNDAY, // Sunday
     }
 
+    [JsonConverter(typeof(StringEnumConverter))]
     public enum TokenType
     {
         OTHER,
         RFID
     }
 
+    [JsonConverter(typeof(StringEnumConverter))]
     public enum WhitelistType
     {
         ALWAYS, // Token always has to be whitelisted, realtime authorization is not possible/allowed.
@@ -211,6 +212,7 @@
         NEVER, // Whitelisting is forbidden, only realtime authorization is allowed. Token should always be authorized by the eMSP.
     }
 
+    [JsonConverter(typeof(StringEnumConverter))]
     public enum Allowed
     {
         ALLOWED, // This Token is allowed to charge at this location.
@@ -220,6 +222,7 @@
         NOT_ALLOWED, // Token is valid, but is not allowed to charge at the given location.
     }
 
+    [JsonConverter(typeof(StringEnumConverter))]
     public enum CommandResponseType
     {
         NOT_SUPPORTED, // The requested command is not supported by this CPO, Charge Point, EVSE etc.
@@ -229,6 +232,7 @@
         UNKNOWN_SESSION, // The Session in the requested command is not known by this CPO.
     }
 
+    [JsonConverter(typeof(StringEnumConverter))]
     public enum CommandType
     {
         RESERVE_NOW, // Request the Charge Point to reserve a (specific) EVSE for a Token for a certain time, starting now.

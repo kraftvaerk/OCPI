@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OCPI.DTO.v2_1_1.Shared;
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace OCPI.DTO.v2_1_1.Tokens

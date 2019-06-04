@@ -2,13 +2,13 @@
 
 namespace OCPI.DTO.v2_1_1.Version
 {
-    public class Version
+    public class Versions
     {
         /// <summary>
         /// The version number.
         /// </summary>
         [Required]
-        public VersionNumber version { get; set; }
+        public string version { get; set; }
 
         /// <summary>
         /// URL to the endpoint containing version specific information.

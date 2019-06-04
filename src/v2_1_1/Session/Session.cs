@@ -1,5 +1,6 @@
 ﻿using OCPI.DTO.v2_1_1.CDRs;
 using OCPI.DTO.v2_1_1.Locations;
+using OCPI.DTO.v2_1_1.Shared;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -24,7 +25,7 @@ namespace OCPI.DTO.v2_1_1.Session
         /// <summary>
         /// The time when the session is completed.
         /// </summary>
-        public DateTime end_datetime { get; set; }
+        public DateTime? end_datetime { get; set; }
 
         /// <summary>
         /// How many kWh are charged.
@@ -75,7 +76,7 @@ namespace OCPI.DTO.v2_1_1.Session
         /// no price information is given in the Session object, 
         /// this does not have to mean it is free of charge.
         /// </summary>
-        public decimal total_cost { get; set; }
+        public decimal? total_cost { get; set; }
 
         /// <summary>
         /// The status of the session.

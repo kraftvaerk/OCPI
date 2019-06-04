@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -43,10 +46,16 @@
     <Compile Include="v2_1_1\CDRs\CDR.cs" />
     <Compile Include="v2_1_1\CDRs\CdrDimension.cs" />
     <Compile Include="v2_1_1\CDRs\ChargingPeriod.cs" />
+    <Compile Include="v2_1_1\CDRs\ICdrCpoEndpoint.cs" />
+    <Compile Include="v2_1_1\CDRs\ICdrEmspEndpoint.cs" />
+    <Compile Include="v2_1_1\Commands\CommandResponse.cs" />
+    <Compile Include="v2_1_1\Commands\ICommandsEmspEndpoint.cs" />
+    <Compile Include="v2_1_1\Commands\ICommandsCpoEndpoint.cs" />
     <Compile Include="v2_1_1\Commands\ReserveNow.cs" />
     <Compile Include="v2_1_1\Commands\StartSession.cs" />
     <Compile Include="v2_1_1\Commands\StopSession.cs" />
     <Compile Include="v2_1_1\Commands\UnlockConnector.cs" />
+    <Compile Include="v2_1_1\Credential\ICredentialsEndpoint.cs" />
     <Compile Include="v2_1_1\Locations\AdditionalGeoLocation.cs" />
     <Compile Include="v2_1_1\Locations\BusinessDetails.cs" />
     <Compile Include="v2_1_1\Credential\Credentials.cs" />
@@ -58,27 +67,51 @@
     <Compile Include="v2_1_1\Locations\ExceptionalPeriod.cs" />
     <Compile Include="v2_1_1\Locations\GeoLocation.cs" />
     <Compile Include="v2_1_1\Locations\Hours.cs" />
+    <Compile Include="v2_1_1\Locations\ILocationsCpoEndpoint.cs" />
+    <Compile Include="v2_1_1\Locations\ILocationsEmspEndpoint.cs" />
     <Compile Include="v2_1_1\Locations\Image.cs" />
     <Compile Include="v2_1_1\Locations\Location.cs" />
+    <Compile Include="v2_1_1\Locations\PartialConnector.cs" />
+    <Compile Include="v2_1_1\Locations\PartialEVSE.cs" />
+    <Compile Include="v2_1_1\Locations\PartialLocation.cs" />
     <Compile Include="v2_1_1\Locations\RegularHours.cs" />
     <Compile Include="v2_1_1\Locations\StatusSchedule.cs" />
+    <Compile Include="v2_1_1\Session\ISessionsCpoEndpoint.cs" />
+    <Compile Include="v2_1_1\Session\ISessionsEmspEndpoint.cs" />
     <Compile Include="v2_1_1\Session\Session.cs" />
     <Compile Include="v2_1_1\Shared\DisplayText.cs" />
+    <Compile Include="v2_1_1\Shared\ModuleID.cs" />
+    <Compile Include="v2_1_1\Shared\OcpiException.cs" />
+    <Compile Include="v2_1_1\Shared\OcpiPaginationHeaders.cs" />
+    <Compile Include="v2_1_1\Shared\OcpiResponse.cs" />
     <Compile Include="v2_1_1\Shared\Response.cs" />
+    <Compile Include="v2_1_1\Shared\StatusCodes.cs" />
+    <Compile Include="v2_1_1\Tariffs\ITariffsCpoEndpoint.cs" />
+    <Compile Include="v2_1_1\Tariffs\ITariffsEmspEndpoint.cs" />
+    <Compile Include="v2_1_1\Tariffs\PartialTariff.cs" />
     <Compile Include="v2_1_1\Tariffs\PriceComponent.cs" />
     <Compile Include="v2_1_1\Tariffs\Tariff.cs" />
     <Compile Include="v2_1_1\Tariffs\TariffElement.cs" />
     <Compile Include="v2_1_1\Tariffs\TariffRestrictions.cs" />
     <Compile Include="v2_1_1\Tokens\AuthorizationInfo.cs" />
+    <Compile Include="v2_1_1\Tokens\ITokensCpoEndpoint.cs" />
+    <Compile Include="v2_1_1\Tokens\ITokensEmspEndpoint.cs" />
     <Compile Include="v2_1_1\Tokens\LocationReferences.cs" />
     <Compile Include="v2_1_1\Tokens\Token.cs" />
     <Compile Include="v2_1_1\Version\Endpoint.cs" />
     <Compile Include="v2_1_1\Shared\Enums.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="v2_1_1\Version\Version.cs" />
+    <Compile Include="v2_1_1\Version\IVersionDetailsEndpoint.cs" />
+    <Compile Include="v2_1_1\Version\IVersionInformationEndpoint.cs" />
+    <Compile Include="v2_1_1\Version\VersionDetailsResponse.cs" />
+    <Compile Include="v2_1_1\Version\VersionNumber.cs" />
+    <Compile Include="v2_1_1\Version\Versions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
