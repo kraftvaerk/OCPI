@@ -15,7 +15,7 @@ namespace OCPI.DTO.v2_1_1.Locations
         /// Link to the operator's website.
         /// </summary>
         [MaxLength(255)]
-        public string url { get; set; }
+        public string website { get; set; }
 
         /// <summary>
         /// Image link to the operator's logo.
